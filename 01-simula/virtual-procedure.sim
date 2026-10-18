@@ -1,0 +1,44 @@
+begin
+  Class Animal;
+  Virtual: Procedure Speak;
+  begin
+    Procedure Speak;
+    begin
+        OutText("Animal");
+        OUtImage;
+    End;
+  End;
+
+  Animal Class Dog;
+  begin
+    Procedure Speak;
+    begin
+      OutText("Dog: Woof!");
+      OutImage;
+    End;
+  End;
+
+  Animal Class Cat;
+  begin
+    Procedure Speak;
+    begin
+      OutText("Cat: Meow!");
+      OutImage;
+    End;
+  End;
+
+
+  Ref(Animal) A;
+
+  A :- New Dog;
+  A.Speak;
+
+  A :- New Cat;
+  A.Speak;
+
+
+  -- Ref(Dog) A;
+
+  -- A :- New Dog;
+  -- A.Speak;
+End;

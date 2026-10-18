@@ -1,0 +1,35 @@
+begin
+  Class BankAccount;
+  begin
+    Integer Balance;
+
+    Procedure Deposit(Amount);
+      Integer Amount;
+    begin
+      Balance := Balance + Amount;
+    End;
+
+    Procedure ShowBalance;
+    begin
+      OutInt(Balance, 0);
+      OutImage;
+    End;
+
+    Balance := 0;
+  End;
+
+  BankAccount Class SavingAccount;
+  begin
+    Procedure AddInterest;
+    begin
+      Balance := Balance + 10;
+    End;
+  end;
+
+  Ref(SavingAccount) Account;
+
+  Account :- New SavingAccount;
+  Account.Deposit(100);
+  Account.AddInterest;
+  Account.ShowBalance;
+End;
