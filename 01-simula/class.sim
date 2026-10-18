@@ -1,0 +1,32 @@
+begin
+    Class Counter;
+    begin
+      Integer Value;
+
+      Procedure Increment;
+      begin
+        Value := Value + 1;
+      end;
+
+      Procedure Show;
+      begin
+        OutInt(Value, 0);
+        OutImage;
+      end;
+
+      Value := 0;
+    end;
+
+    Ref(Counter) A, B;
+
+    A :- New Counter;
+    B :- New Counter;
+
+    A.Increment;
+    A.Increment;
+    B.Increment;
+
+    A.Show;
+    B.Show;
+  End;
+
