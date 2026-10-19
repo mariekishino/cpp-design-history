@@ -1,0 +1,62 @@
+
+Begin
+    Class Worker;
+    Begin
+        OutText("Worker: Step 1");
+        OutImage;
+
+        Detach;
+
+        OutText("Worker: Step 2");
+        OutImage;
+    End;
+
+    Ref(Worker) A;
+
+    OutText("Main: Before New");
+    OutImage;
+
+    A :- New Worker;
+
+    OutText("Main: After New");
+    OutImage;
+
+    Resume(A);
+
+    OutText("Main: After Resume");
+    OutImage;
+End;
+
+
+-- Begin
+--   Class Worker(Name);
+--     Text Name;
+--   Begin
+--     OutText(Name);
+--     OutText(": Step 1");
+--     OutImage;
+
+--     Detach;
+
+--     OutText(Name);
+--     OutText(": Step 2");
+--     OutImage;
+
+--     Detach;
+
+--     OutText(Name);
+--     OutText(": Step 3");
+--     OutImage;
+--   End;
+
+--   Ref(Worker) A, B;
+
+--   A :- New Worker("A");
+--   B :- New Worker("B");
+
+--   Resume(A);
+--   Resume(B);
+
+--   Resume(A);
+--   Resume(B);
+-- End;
